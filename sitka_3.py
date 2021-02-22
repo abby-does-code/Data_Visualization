@@ -1,7 +1,7 @@
 import csv
-import datetime as dt
+import datetime as dt  # MAGIC!
 
-open_file = open("sitka_weather_07-2018_simple.csv", "r")
+open_file = open("sitka_weather_2018_simple.csv", "r")
 
 csv_file = csv.reader(open_file, delimiter=",")
 
@@ -18,48 +18,55 @@ for index, header in enumerate(header_row):
 
 highs = []
 dates = []
+lows = []
 
-"""
-Version 1 (functional!)
-
-for row in csv_file:
-    highs.append(int(row[5]))
-    dates.append(row[2])  
-"""
 
 # Version 2 (in class):
 somedate = "2010-02-18"
 converted_date = dt.datetime.strptime(somedate, "%Y-%m-%d")
+# This is an example of how the converted datetime works; use the dt.datetime to make datetime work on your weird computer
 
 for row in csv_file:
     highs.append(int(row[5]))
-    converted_date = dt.datetime.strptime(somedate, "%Y-%m-%d")
+    converted_date = dt.datetime.strptime(row[2], "%Y-%m-%d")
+    dates.append(converted_date)
+    lows.append(int(row[6]))
 
 
-# print(highs)
+# ctrl + option + n to run code
+
 
 # Let's extract the date to print on the graph with the highs
+# 1)
+# 2)
+# 3)
 
-"""
+
 import matplotlib.pyplot as plt
+
 
 fig = plt.figure()
 
 
-plt.plot(dates, highs, c="red")
-plt.title("Daily high temperatures, July 2018", fontsize=16)
+plt.plot(dates, highs, c="red")  # plt is the actual graph object
+plt.plot(dates, lows, c="blue")
+
+plt.title("Daily high and low temperatures -  2018", fontsize=16)
 plt.xlabel("", fontsize=12)
 plt.ylabel("Temperature (F)", fontsize=12)
 
+plt.tick_params(axis="both", labelsize=12)
+
+fig.autofmt_xdate()
+# Draws labels daigonnaly to prevent overlapping
 
 plt.show()
-"""
-"""
-somedate = "2-10-07-01"
-converted_date = dt.datetime.strptime(somedate, "%Y-%m-%d")  # this line doesn't work
-# This could hypothetically strip a time
 
-print(converted_date)
+##ASSIGNMENT!##
 
-# Says no attribute strptime
-"""
+fig2, a = plt.subplots(2)
+
+a[0].plot(dates, highs, c="red")
+a[1].plot(dates, lows, c="blue")
+
+plt.show()

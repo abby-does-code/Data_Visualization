@@ -6,3 +6,4 @@ plt.show()
 
 
 # Code
+# 13:29 sorry just can't do it anymore

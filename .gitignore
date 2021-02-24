@@ -4,4 +4,4 @@
 # Folders listed will be ignored by git and won't be synced
 #Deleted a folder from OG
 #Want vs code to be ignored; we don't need them
-#Aded .venv/ to tell it to ignore not only the parent folder but everything under
+#Aded .venv/ to tell it to ignore not only the parent folder but everything under it

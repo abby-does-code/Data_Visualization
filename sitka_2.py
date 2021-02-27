@@ -34,27 +34,31 @@ converted_date = dt.datetime.strptime(somedate, "%Y-%m-%d")
 for row in csv_file:
     highs.append(int(row[5]))
     converted_date = dt.datetime.strptime(somedate, "%Y-%m-%d")
+    dates.append(converted_date)
 
 
 # print(highs)
 
 # Let's extract the date to print on the graph with the highs
 
-"""
+
 import matplotlib.pyplot as plt
 
 fig = plt.figure()
 
+fig.autofmt_xdate()
 
 plt.plot(dates, highs, c="red")
-plt.title("Daily high temperatures, July 2018", fontsize=16)
+plt.title("Daily high temperatures, July 2018", fontsize=12)
 plt.xlabel("", fontsize=12)
 plt.ylabel("Temperature (F)", fontsize=12)
+plt.tick_params(axis="both", labelsize=12)
 
 
 plt.show()
+
 """
-"""
+Example: 
 somedate = "2-10-07-01"
 converted_date = dt.datetime.strptime(somedate, "%Y-%m-%d")  # this line doesn't work
 # This could hypothetically strip a time

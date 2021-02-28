@@ -2,21 +2,21 @@ import csv
 import matplotlib
 
 
-open_file = open(input("What file are we looking at? "), "r")
+open_file = open("death_valley_2018_simple.csv", "r")
 
 csv_file = csv.reader(open_file, delimiter=",")
 
 header_row = next(csv_file)
 
 
-lows = []
-
 for index, header in enumerate(header_row):
-    min_row = 
+    if header_row[header]["header"] == "TMIN":
+        lows_index_no = header[index]
 
+# String indices must be integers or slices, not str
+# String index out of range
 
-
-print(lows)
+print(lows_index_no)
 
 """
 

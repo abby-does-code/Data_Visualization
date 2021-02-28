@@ -12,13 +12,8 @@ header_row = next(csv_file)
 lows = []
 
 for index, header in enumerate(header_row):
-    for row in csv_file:
-    try:
-        high = int(row[4])
-        low = int(row[5])
-    if header == "TMIN":
-        for row in csv_file:
-            lows.append(row())
+    min_row = 
+
 
 
 print(lows)

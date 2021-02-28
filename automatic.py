@@ -19,6 +19,7 @@ for index, header in enumerate(header_row):
 print(lows)
 
 """
+
 for row in csv_file:
     highs.append(int(row[5]))
     converted_date = dt.datetime.strptime(row[2], "%Y-%m-%d")

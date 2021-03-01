@@ -10,7 +10,7 @@ header_row = next(csv_file)
 
 
 for index, header in enumerate(header_row):
-    if header_row[header]["header"] == "TMIN":
+    if header_row["header"] == "TMIN":
         lows_index_no = header[index]
 
 # String indices must be integers or slices, not str
